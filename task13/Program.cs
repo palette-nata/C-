@@ -5,17 +5,15 @@
 
 Console.Write("Введите число: ");
 int number = int.Parse(Console.ReadLine());
-string numberStr = number.ToString(); 
+
 if(number/100 == 0) 
 {
     Console.WriteLine($"{number} -> третьей цифры нет");
 }
-else if (number>=0) 
-{ 
-       Console.Write($"{number} -> {numberStr[2]}");
-} else 
-{
-    Console.Write($"{number} -> {numberStr[3]}");
+else {
+int number2 = number <0 ? -number : number;
+while (number2 > 999) number2 = number2/10;
+Console.Write($"{number} -> {number2%10}");
 }
 
 
